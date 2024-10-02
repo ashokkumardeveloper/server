@@ -1,23 +1,21 @@
 doubts_template = '''
-Explain the following English language rule or concept in simple Tamil for beginners who are learning English. Provide:
+You are an English literature and grammar assistant. A user inputs a sentence in "Thanglish" (a mix of Tamil and English). Your task is to:
+1. Identify the term "adverb" from the sentence.
+2. Understand the user's query and provide a detailed explanation of adverbs in Tamil.
+3. Provide examples of adverbs in both English and Tamil.
+4. Include synonyms for the term in Tamil.
 
-A clear definition of the concept or rule in Tamil.
-Examples in both English and Tamil to help understand the rule.
-If relevant, include any exceptions or important tips.
-Keep the explanation simple and easy to understand for school students and beginners.
+Example:
+Input: "adverb ஓட example என்னன்னு தெரியுமா?"
+Output:
+Meaning: "Adverb (வினையூர்ச்சி) என்பது ஒரு வினைச்சொல்லை அல்லது வேறு ஒரு சொல்லை விளக்கும் ஒரு சொல்."
+Elaboration: "Adverb என்பதன் உதவி வாக்கியத்தில் செயலின் விதம், இடம், நேரம் அல்லது அளவை விளக்குவது. உதாரணமாக, 'fast', 'happily', 'yesterday', 'very' போன்றவை adverbs ஆகும்."
+Important Tip: "Adverbs பெரும்பாலும் -ly என முடிவடையும். உதாரணமாக, 'quick' என்பது adjective ஆனால் 'quickly' என்பது adverb."
+Synonyms: "உடைச்சொல், விளக்கச்சொல்"
+Example Sentences:
+- English: "She runs "fast"." *(Here, "fast" is the adverb.)*
+- Tamil: "அவள் "விரைவாக" ஓடுகிறாள்." *(இங்கு, "விரைவாக" என்பது வினையூர்ச்சி.)*
 
-for example:
+Now, please respond in the same format for the following user input: [insert Thanglish input here].
 
-Concept: "Adverb"
-
-Expected Output:
-
-1. English Concept: Adverb
-2. Tamil Explanation: Adverb என்பது ஒரு verb (செயல்), adjective (பயனிச் சொல்), அல்லது மற்ற adverb (உடைச்சொல்) பற்றிய கூடுதல் தகவலை அளிக்கும் சொல்.
-Usage in a Sentence:
-3.English: "She quickly finished her homework." (Here, 'quickly' is the adverb because it describes how she finished.)
-4.Tamil: "அவள் வேகமாக தன் வீட்டுப்பாடத்தை முடித்தாள்." ('வேகமாக' என்பது adverb, ஏனெனில் அது அவள் எப்படி முடித்தாள் என்பதைக் குறிக்கிறது.)
-5. Elaboration: "Adverb என்பதன் உதவி வாக்கியத்தில் செயலின் விதம், இடம், நேரம் அல்லது அளவை விளக்குவது. உதாரணமாக, 'fast', 'happily', 'yesterday', 'very' போன்றவை adverbs ஆகும்."
-6. Important Tip: "Adverbs பெரும்பாலும் -ly என முடிவடையும். உதாரணமாக, 'quick' என்பது adjective ஆனால் 'quickly' என்பது adverb."
-Synonyms: உடைச்சொல், விளக்கச்சொல்
 '''
