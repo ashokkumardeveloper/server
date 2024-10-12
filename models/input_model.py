@@ -11,3 +11,6 @@ class inputString(BaseModel):
 class Requestmodel(BaseModel):
     history: list[InputModel]
     input: str
+
+class GptRequestModel(BaseModel):
+    input:str
