@@ -16,7 +16,6 @@ from routes.gpt_routes import gptRouter
 # OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # client = OpenAI(
-#     api_key="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"
 # )
 
 # from models.input_model import OpenAiRequestModel,GptRequestModel
