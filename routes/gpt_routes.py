@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from models.input_model import GptRequestModel
+from models.input_model import OpenAiRequestModel
 from repository.llm import openAiLLM
 from templates.translate_templates import translate_tepmplate
 from templates.grammar_template import grammar_Template
@@ -13,7 +13,7 @@ from typing import List
 gptRouter = APIRouter()
 
 @gptRouter.post("/translate-gpt")
-def translate(request:GptRequestModel):
+def translate(request:OpenAiRequestModel):
     # call the funtion fro repository and pass the parameters
     try:
         res =  openAiLLM(system_instruction=translate_tepmplate,request=request)
@@ -23,7 +23,7 @@ def translate(request:GptRequestModel):
         raise e
 
 @gptRouter.post("/grammar-check-gpt")
-def grammar_check(request:GptRequestModel):
+def grammar_check(request:OpenAiRequestModel):
     # call the funtion fro repository and pass the parameters
     try:
         res =  openAiLLM(system_instruction=grammar_Template,request=request)
@@ -33,7 +33,7 @@ def grammar_check(request:GptRequestModel):
         raise e
 
 @gptRouter.post("/word-meaning-gpt")
-def word_meaning(request:GptRequestModel):
+def word_meaning(request:OpenAiRequestModel):
     # call the funtion fro repository and pass the parameters
     try:
         res =  openAiLLM(system_instruction=thanglish_meaning_template,request=request)
@@ -43,7 +43,7 @@ def word_meaning(request:GptRequestModel):
         raise e
 
 @gptRouter.post("/doubt-gpt")
-def doubt(request:GptRequestModel):
+def doubt(request:OpenAiRequestModel):
     # call the funtion fro repository and pass the parameters
     try:
         res =  openAiLLM(system_instruction=doubts_template,request=request)
@@ -53,7 +53,7 @@ def doubt(request:GptRequestModel):
         raise e
 
 @gptRouter.post("/essay-gpt")
-def essay(request:GptRequestModel):
+def essay(request:OpenAiRequestModel):
     # call the funtion fro repository and pass the parameters
     try:
         res =  openAiLLM(system_instruction=essay_template,request=request)
@@ -63,7 +63,7 @@ def essay(request:GptRequestModel):
         raise e
 
 @gptRouter.post("/draft-gpt")
-def draft(request:GptRequestModel):
+def draft(request:OpenAiRequestModel):
     # call the funtion fro repository and pass the parameters
     try:
         res =  openAiLLM(system_instruction=draft_template,request=request)

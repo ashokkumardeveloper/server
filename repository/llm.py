@@ -3,14 +3,16 @@ from typing import List
 from google import generativeai as genai
 import os
 from dotenv import load_dotenv
-from models.input_model import Requestmodel,GptRequestModel
+from models.input_model import Requestmodel,OpenAiRequestModel
 from openai import OpenAI
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 GPT_KEY = os.getenv('GPT_KEY')
 
-client = OpenAI()
+client = OpenAI(
+    api_key=API_KEY
+)
 
 def llmBaseModel(system_instruction:str,request:Requestmodel):
 
@@ -44,7 +46,7 @@ history=request.history
 
 
 
-def openAiLLM(system_instruction:str,request:GptRequestModel):
+def openAiLLM(system_instruction:str,request:OpenAiRequestModel):
     try:
         message = [
             {
@@ -54,15 +56,19 @@ def openAiLLM(system_instruction:str,request:GptRequestModel):
 
         ]
 
-        message.append({
-            "role":"user",
-            "content":request.input,
-        })
+        for req in request.request:
+            message.append({
+                "role": req.role,
+                "content": req.content
+            })
 
         completion =  client.chat.completions.create(
             model='gpt-4o-mini',
             #stream=True,
             messages= message,
+            max_completion_tokens=1024,
+            max_tokens=1024
+
         )
 
         print(completion)
@@ -77,3 +83,5 @@ def openAiLLM(system_instruction:str,request:GptRequestModel):
 
     except Exception as e:
         return e
+
+

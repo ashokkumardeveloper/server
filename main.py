@@ -1,4 +1,6 @@
 
+# import os
+# import re
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
@@ -14,10 +16,14 @@ from routes.gpt_routes import gptRouter
 # OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # client = OpenAI(
-#     api_key=OPENAI_API_KEY
+#     api_key="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"
 # )
 
-# # test ended
+# from models.input_model import OpenAiRequestModel,GptRequestModel
+
+# # # test ended
+
+
 
 
 
@@ -30,6 +36,16 @@ async def lifespan(app: FastAPI):
     print("Shutting down...")
 
 app = FastAPI(lifespan=lifespan)
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow any origin for development, restrict this in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 app.include_router(router=router,tags=["translate"])
 app.include_router(router=gptRouter,tags=['gpt-routes'])
@@ -68,3 +84,45 @@ app.include_router(router=gptRouter,tags=['gpt-routes'])
 # formatSting = re.sub(r'[\*]', '', completion.choices[0].message.content).strip()
 
 # print(formatSting)
+# def openAiLLM(system_instruction:str,request:OpenAiRequestModel):
+#     try:
+#         message = [
+#             {
+#                 "role":"Luna",
+#                 "content":system_instruction
+#             },
+
+#         ]
+
+#         for req in request.request:
+#             message.append({
+#                 "role": req.role,
+#                 "content": req.content
+#             })
+
+#         completion =  client.chat.completions.create(
+#             model='gpt-4o-mini',
+#             #stream=True,
+#             messages= message,
+#         )
+
+#         print(completion)
+#         formatSting = re.sub(r'[\*]', '', completion.choices[0].message.content).strip()
+#         res =  {
+#             "completion_tokens" : completion.usage.completion_tokens,
+#             "prompt_tokens":completion.usage.prompt_tokens,
+#             "total_tokens":completion.usage.total_tokens,
+#             "messages":formatSting
+
+#         }
+#         print(res)
+#         return res
+
+#     except Exception as e:
+#         print(f"error {e}")
+#         return e
+
+
+
+
+#openAiLLM(system_instruction="you are super luna englidh tutor",request=OpenAiRequestModel(request=[GptRequestModel(role="user",content="vanakkam")]))

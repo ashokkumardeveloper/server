@@ -1,3 +1,4 @@
+from typing import List
 from pydantic import BaseModel
 
 
@@ -13,4 +14,9 @@ class Requestmodel(BaseModel):
     input: str
 
 class GptRequestModel(BaseModel):
-    input:str
+    content:str
+    role:str
+
+class OpenAiRequestModel(BaseModel):
+    request: List[GptRequestModel]
+
