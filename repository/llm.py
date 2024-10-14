@@ -8,10 +8,10 @@ from openai import OpenAI
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
-GPT_KEY = os.getenv('GPT_KEY')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI(
-    api_key=API_KEY
+    api_key=OPENAI_API_KEY
 )
 
 def llmBaseModel(system_instruction:str,request:Requestmodel):
