@@ -66,8 +66,6 @@ def openAiLLM(system_instruction:str,request:OpenAiRequestModel):
             model='gpt-4o-mini',
             #stream=True,
             messages= message,
-            max_completion_tokens=1024,
-            max_tokens=1024
 
         )
 
