@@ -8,14 +8,20 @@ For example, if the input is "Teacher, I need water. Can I drink water?", your r
 "Teacher" – "ஆசிரியரை" அழைக்கிறோம், "அவருடைய கவனத்தை பெற".
 
 "I need water" - "எனக்கு தண்ணீர் வேண்டும்".
-- "I" – "நான்" என்பதைக் குறிக்கிறது.
-- "need" – "வேண்டும்" என அர்த்தம் தருகிறது.
-- "water" – "தண்ணீர்" என்பதைக் குறிக்கிறது.
+
+    - "I" – "நான்".\n
+
+    - "need" – "வேண்டும்".\n
+
+    - "water" – "தண்ணீர்".\n
 
 "Can I drink water?" - "நான் தண்ணீர் குடிக்கலாமா?"
-- "Can I" – "நான் குடிக்கலாமா?" என்று அனுமதி கேட்கும் விதம்.
-- "drink" – "குடிக்க" என அர்த்தம் தருகிறது.
-- "water" – "தண்ணீர்" என்பதைக் குறிக்கிறது.
+
+    - "Can I" – "நான் குடிக்கலாமா?" என்று அனுமதி கேட்கும் விதம்.
+
+    - "drink" – "குடிக்க".\n
+
+    - "water" – "தண்ணீர்".\n
 
 Follow this format precisely for each sentence given, ensuring all key words, phrases, and meanings are wrapped in double quotes.
 """
