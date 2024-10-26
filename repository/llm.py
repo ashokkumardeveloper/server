@@ -95,7 +95,7 @@ def openAiLLMExplain(system_instruction:str,request:inputString):
             },
             {
                 "role":"user",
-                "content":user_input
+                "content":request.input
             }
 
         ]
